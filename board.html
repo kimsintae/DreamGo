@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dream Go!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/board.js"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+        a {
+            color: black;
+        }
+        
+        a:hover {
+            cursor: pointer;
+        }
+        
+        .content .content_span {
+            white-space: nowrap;
+            display: inline-block;
+            width: 600px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .badge {
+            background: #b7d7e8;
+        }
+        
+        .typeSelector,
+        .orderSelector {
+            width: 100px;
+            height: 35px;
+        }
+        
+        .table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html">Dream Go!</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="Intro.html">Home</a></li>
+                    <li><a href="job_info.html">직업정보</a></li>
+                    <li><a href="sch_info.html">학교정보</a></li>
+                    <li><a href="dep_info.html">학과정보</a></li>
+                    <li><a href="apti_test.html">적성 심리 검사</a></li>
+                    <li><a href="#">우리끼리</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-1 sidenav">
+            </div>
+            <div class="col-sm-10 text-left">
+                <div class="jumbotron">
+                    <h1>우리끼리</h1>
+                    <p>알고 있는 것을 공유해보고</p>
+                    <p>고민을 털어놓는 공간입니다.!</p>
+                </div>
+
+
+                <!-- 게시판 -->
+                <div class="container col-sm-12 board_wrap">
+                    <div class="col-sm-9">
+
+                    </div>
+                    <form action="board.html" method="get" id="selectorForm">
+                        <div class="col-sm-1 text-right">
+                            <select name="order" class="orderSelector selector">
+                                <option value="recent" selected>최신순</option>
+                                <option value="readCnt">조회순</option>
+                                <option value="reply">댓글순</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-1 text-right">
+                            <select name="type" class="typeSelector selector">
+                                <option value="00" selected>전체</option>
+                                <option value="01">진로</option>
+                                <option value="02">직업</option>
+                                <option value="03">수다</option>
+                                <option value="04">학교</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1">
+                            <button type="submit" form="selectorForm" class="btn btn-default">정렬</button>
+                        </div>
+                    </form>
+                    <br/>
+                    <br/>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-sm-1">No.</th>
+                                <th class="col-sm-3">제목</th>
+                                <th class="col-sm-4">내용</th>
+                                <th class="col-sm-2">작성자</th>
+                                <th class="col-sm-1">분류</th>
+                                <th class="col-sm-1">조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="title" title="웹프로그래머가 되고 싶습니다."><a href="/read.html">웹프로그래머가 되고 싶습니다.</a><span class="badge" title="댓글 수">5</span></td>
+                                <td class="content"><span class="content_span">안녕하세요. 웹 프로그래머가 꿈인 학생입니다. 자바개발을 기반으로 한 웹 개발자가 되고 싶습니다. 꼭 되고 싶습니다!</span>
+                                </td>
+                                <td class="writer"><img src="img/img.jpg" class="img-thumbnail" alt="Cinque Terre" width="35" height="35"> john@example.com</td>
+                                <td class="cate">진로</td>
+                                <td class="readCnt">23</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td class="title" title="웹프로그래머가 되고 싶습니다."><a href="/read.html">웹프로그래머가 되고 싶습니다.</a><span class="badge" title="댓글 수">5</span></td>
+                                <td class="content"><span class="content_span">안녕하세요. 웹 프로그래머가 꿈인 학생입니다. 자바개발을 기반으로 한 웹 개발자가 되고 싶습니다. 꼭 되고 싶습니다!</span>
+                                </td>
+                                <td class="writer"><img src="img/img.jpg" class="img-thumbnail" alt="Cinque Terre" width="35" height="35"> 개발자</td>
+                                <td class="type">진로</td>
+                                <td class="readCnt">23</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td class="title" title="웹프로그래머가 되고 싶습니다."><a href="/read.html">웹프로그래머가 되고 싶습니다.</a><span class="badge" title="댓글 수">5</span></td>
+                                <td class="content"><span class="content_span">안녕하세요. 웹 프로그래머가 꿈인 학생입니다. 자바개발을 기반으로 한 웹 개발자가 되고 싶습니다. 꼭 되고 싶습니다!</span>
+                                </td>
+                                <td class="writer"><img src="img/img.jpg" class="img-thumbnail" alt="Cinque Terre" width="35" height="35"> python</td>
+                                <td class="type">진로</td>
+                                <td class="readCnt">23</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td class="title" title="웹프로그래머가 되고 싶습니다."><a href="">웹프로그래머가 되고 싶습니다.</a><span class="badge" title="댓글 수">5</span></td>
+                                <td class="content"><span class="content_span">안녕하세요. 웹 프로그래머가 꿈인 학생입니다. 자바개발을 기반으로 한 웹 개발자가 되고 싶습니다. 꼭 되고 싶습니다!</span>
+                                </td>
+                                <td class="writer"><img src="img/img.jpg" class="img-thumbnail" alt="Cinque Terre" width="35" height="35"> john</td>
+                                <td class="type">진로</td>
+                                <td class="readCnt">23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--//board_wrap-->
+                <div class="row col-sm-12">
+
+                </div>
+            </div>
+            <div class="col-sm-1 sidenav">
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+
+</html>

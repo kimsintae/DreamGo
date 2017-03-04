@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".job_opt").load("html/job_cat.html");$(".apti_opt").load("html/apti_cat.html")});
